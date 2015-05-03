@@ -13,3 +13,35 @@
 - MQTT Server: Mosquitto
 - MQTT Client lib: Paho
 
+###準備工作
+- Respberry Pi安裝Mosquitto [參考資料1]
+執行：
+
+```sh
+$ wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
+$ sudo apt-key add mosquitto-repo.gpg.key
+$ rm mosquitto-repo.gpg.key
+$ cd /etc/apt/sources.list.d/
+
+$ sudo wget http://repo.mosquitto.org/debian/mosquitto-repo.list
+$ sudo apt-get update
+$ sudo apt-get install mosquitto mosquitto-clients
+```
+
+- 測試Mosquitto 是否安裝完成
+使用兩個ssh連線。分別執行:
+```sh
+$ mosquitto_sub -d -t hello/world
+$ mosquitto_pub -d -t hello/world -m "Hi, This test message."
+```
+若在subscribe端可以收到訊息，就是成功了。
+
+
+
+
+
+
+
+
+
+[參考資料1]:http://www.cheng-min-i-taiwan.blogspot.tw/2015/03/raspberry-pimqtt-android.html
