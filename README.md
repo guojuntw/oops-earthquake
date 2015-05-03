@@ -7,8 +7,9 @@
 ###系統架構
 - 用兩塊mbed平台的開發板(Seeed Studio Arch Pro)，接上6DOF的姿態傳感器(MPU6050)執行偵測，並透過MQTT將資訊送往伺服器。
 - 用一個 Respberry Pi作為伺服器，安裝Mosquitto作為MQTT Server，並且負責判斷與發文的工作。
-- 3個組件以區域網路連接
+- 以上組件以區域網路連接
 
 ###軟體開發
-
+- MQTT Server: Mosquitto
+- MQTT Client lib: Paho
 
